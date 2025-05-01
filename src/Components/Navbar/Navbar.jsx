@@ -1,6 +1,8 @@
 import React from 'react';
+import { NavLink, useNavigate } from 'react-router';
 
 const Navbar = () => {
+	const navigate = useNavigate();
     return (
         <header className="p-4">
 	<div className="container flex justify-between h-16 mx-auto">
@@ -12,12 +14,18 @@ const Navbar = () => {
 		</a>
 		<ul className="items-stretch hidden space-x-3 lg:flex">
 			<li className="flex">
-				<a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600">Link</a>
+				<NavLink to="/" className="flex items-center px-4 -mb-1 ">Home</NavLink>
+			</li>
+			<li className="flex">
+				<NavLink to="/about" className="flex items-center px-4 -mb-1">About</NavLink>
+			</li>
+			<li className="flex">
+				<NavLink to="/blog" className="flex items-center px-4 -mb-1">Blogs</NavLink>
 			</li>
 		</ul>
 		<div className="items-center flex-shrink-0 hidden lg:flex">
-			<button className="self-center px-8 py-3 rounded">Sign in</button>
-			<button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-600 dark:text-gray-50">Sign up</button>
+			<button onClick={() => navigate("/signin")} className="self-center px-8 py-3 rounded">Sign in</button>
+			<button onClick={() => navigate("/signup")} className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-600 dark:text-gray-50">Sign up</button>
 		</div>
 		<button className="p-4 lg:hidden">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-800">
