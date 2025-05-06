@@ -7,7 +7,9 @@ const Layouts = () => {
     return (
         <div className='bg-black text-white'>
             <Navbar></Navbar>
-            <Outlet/>
+            <div className='max-h-screen'>
+                <Outlet/>
+            </div>
             <Footer/>
         </div>
     );
